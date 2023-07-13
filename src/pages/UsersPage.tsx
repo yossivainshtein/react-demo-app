@@ -16,7 +16,9 @@ const User = ({user}: UserProps) => {
       <tr className="User">
         <td>{user.id}</td>
         <td>{user.name}</td>
-        <td><button>Remove</button></td>
+        <td>
+            <span>🔥</span>
+        </td>
       </tr>
     )
 }
