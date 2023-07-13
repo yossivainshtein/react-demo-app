@@ -8,6 +8,19 @@ class FlytrexUser {
     ) {}
 }
 
+interface UserProps {
+    user: FlytrexUser
+}
+const User = ({user}: UserProps) => {
+    return (
+      <tr className="User">
+        <td>{user.id}</td>
+        <td>{user.name}</td>
+        <td><button>Remove</button></td>
+      </tr>
+    )
+}
+
 export const UsersPage = () => {
     const [users, setUsers] = useState([] as FlytrexUser[])
     useEffect(() => {
@@ -37,15 +50,3 @@ export const UsersPage = () => {
       </table>
     </div>)
   }
-  
-const User = ({user}: {user: FlytrexUser}) => {
-    return (
-      <tr className="User">
-        <td>{user.id}</td>
-        <td>{user.name}</td>
-        <td><button>Remove</button></td>
-      </tr>
-    )
-}
-  
-  
